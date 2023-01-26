@@ -1,0 +1,10 @@
+body {
+    background-color: aliceblue;
+}
+.column {
+    float: left;
+    width: 15.33%;
+    padding: 10px;
+    height: 300px;
+    border: 10px black;
+}
