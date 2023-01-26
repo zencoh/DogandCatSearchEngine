@@ -1,1 +1,10 @@
-/* add css here */
+body {
+    background-color: aliceblue;
+}
+div {
+    width: 160 px;
+    height: 80px;
+    padding: 20px;
+    border: 8px solid red;
+    background: white;
+}
