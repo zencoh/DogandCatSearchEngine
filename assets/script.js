@@ -19,7 +19,25 @@ function dogImage(value) {
 // get elmement by iD
 // append image to webpage
 
-}       
+}     
+// {55: 'Boxer',92:'Dalmatian', 121:'Golden Retriever', 124:'Great Dane', 127:'Greyhound'}
+// data value = # for breed, needs to be set for each dropdown item
+function dogApi(value) {
+    var dogUrl = 'https://api.thedogapi.com/v1/breeds/' + value;
+    console.log(dogUrl);
+    fetch(dogUrl)
+    .then(function (response) {
+        return response.json();
+    })
+}
+dogApi(55);
+// boxer
+// dalmation
+// Greyhound
+// Golden Retreiver
+// Great Dane
+
+
 // placeholder parameter. drop down menu will populate this to call the dogApi on the selected breed from webpage
 dogImage('hound');
 
@@ -38,6 +56,16 @@ function catApi(value) {
     })
     .then(function (data) {
        catImage = data[0].url;
+       catID = document.getElementById('Beng').textContent;
+       searchID = catID.toLowerCase().slice(0, 4);
+       console.log(searchID);
+       breedUrl = 'https://api.thecatapi.com/v1/breeds/' + searchID;
     })
 }
+// use breedURL to fetch description and life span 
         catApi('beng');
+// bengal id beng
+// abyssinian id abys   
+// bombay id bomb
+// chartreux id char
+// oriental id orie
