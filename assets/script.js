@@ -5,7 +5,8 @@
     // fetch dog images X
         // append images onto html webpage 
 
-function dogApi(value) {
+function dogImage(value) {
+    // value is input from html of what breed the user selects from drop down menu
     var requestUrl = 'https://dog.ceo/api/breed/' + value + '/images/random';
     console.log(requestUrl);
     fetch(requestUrl)
@@ -20,11 +21,11 @@ function dogApi(value) {
 
 }       
 // placeholder parameter. drop down menu will populate this to call the dogApi on the selected breed from webpage
-dogApi('hound');
+dogImage('hound');
 
-// create api call for cat images
-    // fetch cat api data
-        // grab the cad breeds breed ID
+// create api call for cat images X
+    // fetch cat api data X
+        // grab the cad breeds breed ID 
             // use breed ID to create url to fetch image
     // fetch cat images
         // append images onto html webpage
