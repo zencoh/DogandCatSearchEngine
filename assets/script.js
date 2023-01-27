@@ -19,14 +19,27 @@ function dogApi(value) {
 // append image to webpage
 
 }       
-
+// placeholder parameter. drop down menu will populate this to call the dogApi on the selected breed from webpage
 dogApi('hound');
 
 // create api call for cat images
+    // fetch cat api data
+        // grab the cad breeds breed ID
+            // use breed ID to create url to fetch image
     // fetch cat images
         // append images onto html webpage
-        
-        
+function catApi(value) {
+    var catUrl = 'https://api.thecatapi.com/v1/images/search?breed_ids=' + value;
+    console.log(catUrl);
+    fetch(catUrl)
+    .then (function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+       catImage = data[0].url;
+    })
+}
+        catApi('beng');
 
 // bengal cat is just a placeholder until I can use the input from the HTML doc
 var breedSearched = 'bengal cat'
