@@ -45,8 +45,16 @@ var breedSearched = 'bengal cat'
 //     let url = searchUrl + term;
 //     console.log(term);
 // }
+
+fetch("https://en.wikipedia.org/w/api.php?action=query&titles=bengal_(cat)&prop=revisions&rvprop=content&format=json")
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    // extract the information you need from the data here
+  })
+
 // I am continuing to do research on this API to find the right parameters for, I'm assuming the text content would help with the articles summary of the breed.
-fetch('https://en.wikipedia.org/w/api.php?action=parse&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=5&gsrsearch=' + breedSearched)
+fetch('https://www.mediawiki.org/w/api.php?action=parse&format=json&page=' + breedSearched)
   .then((response) => response.json())
   .then((data) => console.log(data));
 //   i will make a if then statement to display the info from the fetch request to the HTML doc once there is an HTML semantic or tag I can use to display data
