@@ -28,18 +28,18 @@ dogApi('hound');
             // use breed ID to create url to fetch image
     // fetch cat images
         // append images onto html webpage
-function catApi() {
-    var catUrl = 'https://api.thecatapi.com/v1/breeds/';
-
+function catApi(value) {
+    var catUrl = 'https://api.thecatapi.com/v1/images/search?breed_ids=' + value;
+    console.log(catUrl);
     fetch(catUrl)
     .then (function (response) {
         return response.json();
     })
     .then(function (data) {
-        console.log(data);
+       catImage = data[0].url;
     })
 }
-        catApi();
+        catApi('beng');
 
 // bengal cat is just a placeholder until I can use the input from the HTML doc
 var breedSearched = 'bengal cat'
