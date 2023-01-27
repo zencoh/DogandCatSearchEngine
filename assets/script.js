@@ -20,6 +20,17 @@ function dogImage(value) {
 // append image to webpage
 
 }     
+// {55: 'Boxer',92:'Dalmatian', 121:'Golden Retriever', 124:'Great Dane', 127:'Greyhound'}
+// data value = # for breed, needs to be set for each dropdown item
+function dogApi(value) {
+    var dogUrl = 'https://api.thedogapi.com/v1/breeds/' + value;
+    console.log(dogUrl);
+    fetch(dogUrl)
+    .then(function (response) {
+        return response.json();
+    })
+}
+dogApi(55);
 // boxer
 // dalmation
 // Greyhound
