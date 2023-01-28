@@ -29,13 +29,23 @@ function dogApi(value) {
     .then(function (response) {
         return response.json();
     })
+    .then(function (data) {
+        console.log(data);
+       var dogAttitude = data.temperament;
+       console.log(dogAttitude);
+       var dogLife = data.life_span;
+       console.log(dogLife);
+
+    //    append dog info to html page
+    })
 }
+
 // return response.textContent = 'information we want to pull from dog API'
 // need to make it so when the data is retrieved it is displayed at the bottom of the HTML doc, line 99 textArea replace placeholder
 // use local storage to store information that is retrieved from dog API. 
 // localStorage.setItem(dog breed, data about dog) this will be the same for the cat Api
 // use localStorge.getItem() to load breed when the user clicks previous/next breed
-dogApi(55);
+dogApi(121);
 // boxer
 // dalmation
 // Greyhound
