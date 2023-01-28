@@ -48,12 +48,15 @@ dogImage('hound');
 
 // create api call for cat images X
     // fetch cat api data X
-        // grab the cad breeds breed ID 
-            // use breed ID to create url to fetch image
-    // fetch cat images
+        // grab the cad breeds breed ID X
+            // use breed ID to create url to fetch image X
+    // fetch cat images X
         // append images onto html webpage
-function catApi(value) {
-    var catUrl = 'https://api.thecatapi.com/v1/images/search?breed_ids=' + value;
+function catPicture() {
+    // match element to html, 'beng' is a placeholder
+    var catID = document.getElementById('Beng').textContent;
+    var searchID = catID.toLowerCase().slice(0, 4); 
+    var catUrl = 'https://api.thecatapi.com/v1/images/search?breed_ids=' + searchID;
     console.log(catUrl);
     fetch(catUrl)
     .then (function (response) {
@@ -61,14 +64,30 @@ function catApi(value) {
     })
     .then(function (data) {
        catImage = data[0].url;
-       catID = document.getElementById('Beng').textContent;
-       searchID = catID.toLowerCase().slice(0, 4);
-       console.log(searchID);
-       breedUrl = 'https://api.thecatapi.com/v1/breeds/' + searchID;
+      catInfo();
+// append cat Image to webpage
     })
 }
-// use breedURL to fetch description and life span 
-        catApi('beng');
+function catInfo() {
+    var catID = document.getElementById('Beng').textContent;
+    var searchID = catID.toLowerCase().slice(0, 4); 
+    var breedURL = 'https://api.thecatapi.com/v1/breeds/' + searchID;
+    console.log(breedURL);
+    fetch(breedURL)
+    .then (function (response) {
+        return response.json();
+    })
+    .then (function (data) {
+        console.log(data);
+        catDescription = data.description;
+        catAttitude = data.temperament;
+        catLife = data.life_span;
+
+        //append the fetch variables to webpage
+    })
+}
+// use breedURL to fetch description and life span X
+
 // bengal id beng
 // abyssinian id abys   
 // bombay id bomb
