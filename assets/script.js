@@ -14,11 +14,16 @@ function dogImage(value) {
             return response.json();
         })
         .then(function (data) {
+            console.log(data);
             imageUrl = data.message;
+            var imageContainer = document.getElementById("imageContainer");
+            imageContainer.innerHTML = '';
+            var imageElement = document.createElement("img");
+            imageElement.setAttribute("src", imageUrl);
+            imageElement.classList.add("dog-image");
+            imageContainer.appendChild(imageElement);
+            // document.body.appendChild(imageContainer);
         })
-// get elmement by iD
-// append image to webpage
-
 }     
 // {55: 'Boxer',92:'Dalmatian', 121:'Golden Retriever', 124:'Great Dane', 127:'Greyhound'}
 // data value = # for breed, needs to be set for each dropdown item
@@ -34,10 +39,18 @@ function dogApi(value) {
        var dogAttitude = data.temperament;
        console.log(dogAttitude);
        var dogLife = data.life_span;
-       console.log(dogLife);
-
-    //    append dog info to html page
+       console.log(dogLife);     
+       var infoContainer = document.createElement("div");
+       infoContainer.classList.add("dog-info");
+       var attitudePara = document.createElement("p");
+       attitudePara.textContent = "Temperament: " + dogAttitude;
+       infoContainer.appendChild(attitudePara);
+       var lifePara = document.createElement("p");
+       lifePara.textContent = "Life Span: " + dogLife;
+       infoContainer.appendChild(lifePara);
+       document.body.appendChild(infoContainer);
     })
+    
 }
 
 // return response.textContent = 'information we want to pull from dog API'
