@@ -87,8 +87,13 @@ function catPicture() {
     })
     .then(function (data) {
        catImage = data[0].url;
+       var imageContainer = document.getElementById("imageContainer");
+       var imageElement = document.createElement("img");
+       imageElement.setAttribute("src", catImage);
+       imageElement.classList.add("cat-image");
+       imageContainer.appendChild(imageElement);
+       document.body.appendChild(imageContainer);
       catInfo();
-// append cat Image to webpage
     })
 }
 function catInfo() {
@@ -102,11 +107,23 @@ function catInfo() {
     })
     .then (function (data) {
         console.log(data);
-        catDescription = data.description;
-        catAttitude = data.temperament;
-        catLife = data.life_span;
-
-        //append the fetch variables to webpage
+        var catDescription = data.description;
+        console.log(catDescription);
+        var catAttitude = data.temperament;
+        console.log(catAttitude);
+        var catLife = data.life_span;
+        console.log(catLife);
+        var infoContainer = document.createElement("div");
+        infoContainer.classList.add("cat-info");
+        var descriptionPara = document.createElement("p");
+        descriptionPara.textContent = "Description: " + catDescription;
+        infoContainer.appendChild(descriptionPara);
+        var lifePara = document.createElement("p");
+        lifePara.textContent = "Life Span: " + catLife;
+        var attitudePara = document.createElement("p");
+        attitudePara.textContent = "Temperament: " + catAttitude;
+        infoContainer.appendChild(attitudePara);
+        document.body.appendChild(infoContainer);
     })
 }
 // use breedURL to fetch description and life span X
