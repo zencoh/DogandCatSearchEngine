@@ -34,10 +34,18 @@ function dogApi(value) {
        var dogAttitude = data.temperament;
        console.log(dogAttitude);
        var dogLife = data.life_span;
-       console.log(dogLife);
-
-    //    append dog info to html page
+       console.log(dogLife);     
+       var infoContainer = document.createElement("div");
+       infoContainer.classList.add("dog-info");
+       var attitudePara = document.createElement("p");
+       attitudePara.textContent = "Temperament: " + dogAttitude;
+       infoContainer.appendChild(attitudePara);
+       var lifePara = document.createElement("p");
+       lifePara.textContent = "Life Span: " + dogLife;
+       infoContainer.appendChild(lifePara);
+       document.body.appendChild(infoContainer);
     })
+    
 }
 
 // return response.textContent = 'information we want to pull from dog API'
