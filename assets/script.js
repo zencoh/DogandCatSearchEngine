@@ -14,11 +14,16 @@ function dogImage(value) {
             return response.json();
         })
         .then(function (data) {
+            console.log(data);
             imageUrl = data.message;
+            var imageContainer = document.getElementById("imageContainer");
+            imageContainer.innerHTML = '';
+            var imageElement = document.createElement("img");
+            imageElement.setAttribute("src", imageUrl);
+            imageElement.classList.add("dog-image");
+            imageContainer.appendChild(imageElement);
+            // document.body.appendChild(imageContainer);
         })
-// get elmement by iD
-// append image to webpage
-
 }     
 // {55: 'Boxer',92:'Dalmatian', 121:'Golden Retriever', 124:'Great Dane', 127:'Greyhound'}
 // data value = # for breed, needs to be set for each dropdown item
