@@ -55,7 +55,7 @@ if(event.target.value == '127'){
     dogImage('greyhound')
 }
     else if (event.target.value == '121') {
-      dogImage('retriever_golden')
+      dogImage('retriever/golden')
     }
     else if (event.target.value == '92') {
       dogImage('dalmatian')
@@ -64,7 +64,7 @@ if(event.target.value == '127'){
       dogImage('boxer')
     }
     else if (event.target.value == '124'){
-      dogImage('dane_great')
+      dogImage('dane/great')
     }
 }
 
