@@ -52,7 +52,7 @@ function dogApi(value) {
 function onDogChange(event) {
     dogApi(event.target.value);
 }
-dogApi(document.getElementById('breed').value);
+dogApi(document.getElementById('dogBreed').value);
 
 function onCatChange(event) {
     catPicture(event.target.value);
@@ -64,8 +64,8 @@ function onCatChange(event) {
 // use local storage to store information that is retrieved from dog API. 
 // localStorage.setItem(dog breed, data about dog) this will be the same for the cat Api
 // use localStorge.getItem() to load breed when the user clicks previous/next breed
-document.getElementById('breed').addEventListener("change", onDogChange)
-document.getElementById('breed').addEventListener("change", onCatChange)
+document.getElementById('dogBreed').addEventListener("change", onDogChange)
+document.getElementById('catBreed').addEventListener("change", onCatChange)
 
 
 
