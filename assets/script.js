@@ -67,7 +67,7 @@ dogApi(121);
 
 
 // placeholder parameter. drop down menu will populate this to call the dogApi on the selected breed from webpage
-dogImage('hound');
+// dogImage('hound');
 
 // create api call for cat images X
     // fetch cat api data X
@@ -127,7 +127,7 @@ function catInfo() {
     })
 }
 // use breedURL to fetch description and life span X
-
+catPicture();
 // bengal id beng
 // abyssinian id abys   
 // bombay id bomb
