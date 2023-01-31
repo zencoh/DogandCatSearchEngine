@@ -174,6 +174,14 @@ document.addEventListener('DOMContentLoaded', () => {
   
       $close.addEventListener('click', () => {
         closeModal($target);
+        var div = document.getElementById('infoContainer');
+            while(div.firstChild){
+            div.removeChild(div.firstChild);
+            }
+        var div = document.getElementById('imageContainer');
+            while(div.firstChild){
+            div.removeChild(div.firstChild);
+            }
       });
     });
   
