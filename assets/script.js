@@ -51,8 +51,9 @@ function dogApi(value) {
 }
 function onDogChange(event) {
     dogApi(event.target.value);
+    dogImage('')
 }
-dogApi(document.getElementById('dogBreed').value);
+
 
 function onCatChange(event) {
     catPicture(event.target.value);
