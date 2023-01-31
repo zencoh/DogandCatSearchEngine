@@ -1,6 +1,6 @@
 
 // cat API Key live_DumA8PS0G2lXkKvpVOVCuqMLTBJB0qi7ZuWTd6Tf4wqEPwHCDLOZxjHSzdx3UU5p
-
+// var selectedBreed = document.getElementById('breed').value;
 // create api call for dog images X
     // fetch dog images X
         // append images onto html webpage 
@@ -40,7 +40,7 @@ function dogApi(value) {
        console.log(dogAttitude);
        var dogLife = data.life_span;
        console.log(dogLife);     
-       var infoContainer = document.createElement("div");
+       var infoContainer = document.getElementById("infoContainer");
        infoContainer.classList.add("dog-info");
        var attitudePara = document.createElement("p");
        attitudePara.textContent = "Temperament: " + dogAttitude;
@@ -48,17 +48,22 @@ function dogApi(value) {
        var lifePara = document.createElement("p");
        lifePara.textContent = "Life Span: " + dogLife;
        infoContainer.appendChild(lifePara);
-       document.body.appendChild(infoContainer);
+    //    document.body.appendChild(infoContainer);
     })
     
 }
+function onSelectChange(event) {
+    dogApi(event.target.value);
+}
+dogApi(document.getElementById('breed').value);
+
 
 // return response.textContent = 'information we want to pull from dog API'
 // need to make it so when the data is retrieved it is displayed at the bottom of the HTML doc, line 99 textArea replace placeholder
 // use local storage to store information that is retrieved from dog API. 
 // localStorage.setItem(dog breed, data about dog) this will be the same for the cat Api
 // use localStorge.getItem() to load breed when the user clicks previous/next breed
-dogApi(121);
+document.getElementById('breed').addEventListener("change", onSelectChange)
 // boxer
 // dalmation
 // Greyhound
