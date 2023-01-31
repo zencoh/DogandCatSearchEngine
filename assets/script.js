@@ -51,8 +51,23 @@ function dogApi(value) {
 }
 function onDogChange(event) {
     dogApi(event.target.value);
-    dogImage('');
+if(event.target.value == '127'){
+    dogImage('greyhound')
 }
+    else if (event.target.value == '121') {
+      dogImage('retriever_golden')
+    }
+    else if (event.target.value == '92') {
+      dogImage('dalmatian')
+    }
+    else if (event.target.value == '55') {
+      dogImage('boxer')
+    }
+    else if (event.target.value == '124'){
+      dogImage('dane_great')
+    }
+}
+
 
 
 function onCatChange(event) {
