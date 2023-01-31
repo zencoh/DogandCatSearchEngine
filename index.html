@@ -56,36 +56,38 @@
        
       <div class="column is-two-fifths px-6 mr-6">
     <div class="box">
-       Do you want a Dog or Cat?
+       Cat Breeds
        <div class="dropdown">
         <button class="dropbtn">Choose One</button>
         <div class="dropdown-content">
-          <a href="#">Cat</a>
-          <a href="#">Dog</a>    
+          <div class="select is-multiple">
+          <select id="breed" multiple size="3">
+          <option value="beng">Bengal</option>
+          <option value="abys">Abyssinian</option>
+          <option value="bomb">Bombay</option>
+          <option value="char">Chartreux</option>
+          <option value="orie">Oriental</option>
+          </select>
+          </div>
         </div>
       </div>
+    </div>
       </div>
         </div>
  <div class="column is-two-fifths px-6 mr-6">
     <div class="box">
-      Dog Breeds and Cat Breeds
-      <div class="dropdown">
-        <!-- <button class="dropbtn js-modal-trigger" data-target="modal-js-example">Choose One</button> -->
+      Dog Breeds
+       <div class="dropdown">
         <button class="dropbtn">Choose One</button>
         <div class="dropdown-content">
-          <div class="select js-modal-trigger is-multiple" data-target="modal-js-example">
-            <select id="breed" multiple size="8">
-              <option value="55">Boxer</option>
-              <option value="92">Dalmatian</option>
-              <option value="127">Greyhound</option>
-              <option value="121" selected>Golden Retriever</option>
-              <option value="124">Great Dane</option>
-              <option value="beng">Bengal</option>
-              <option value="abys">Abyssinian</option>
-              <option value="bomb">Bombay</option>
-              <option value="char">Chartreux</option>
-              <option value="orie">Oriental</option>
-            </select>
+        <div class="select js-modal-trigger is-multiple" data-target="modal-js-example">
+          <select id="breed" multiple size="8">
+            <option value="55">Boxer</option>
+            <option value="92">Dalmatian</option>
+            <option value="127">Greyhound</option>
+            <option value="121" selected>Golden Retriever</option>
+            <option value="124">Great Dane</option>
+          </select>
           </div>
         </div>
       </div>
@@ -120,3 +122,4 @@
   </body>
   <script src="assets/script.js"></script>
 </html>
+  n
