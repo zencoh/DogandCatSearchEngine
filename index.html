@@ -60,7 +60,7 @@
        <div class="dropdown">
         <button class="dropbtn">Choose One</button>
         <div class="dropdown-content">
-          <div class="select is-multiple">
+          <div class="select is-multiple js-modal-trigger" data-target="modal-js-example">
           <select id="breed" multiple size="3">
           <option value="beng">Bengal</option>
           <option value="abys">Abyssinian</option>
@@ -93,25 +93,21 @@
       </div>
     </div>
  </div>
- <!-- <button class="js-modal-trigger" data-target="modal-js-example">
-  Open JS example modal
-</button> -->
  <div class="column is-8">
     <figure class="image is-128x128 mx-6">
-    <!-- <img id="imageContainer" src="https://bulma.io/images/placeholders/128x128.png"> -->
   <div id="imageContainer"></div>
           </figure>
         </div>
       </div>
       <div class="column is-4 pb-6 mb-6">
         <div class="box ">
-          <!-- <textarea class="textarea" placeholder="text about dogs and cats" rows="5"></textarea> -->
           <button type="button">Next Breed!</button>
           </div>
  </div>
 <div id="modal-js-example" class="modal">
   <div class="modal-background"></div>
     <div class="modal-content">
+      <div id="imageContainer"></div>
       <div id="infoContainer" class="box">
           <!-- Breed description -->
       </div>
