@@ -80,11 +80,11 @@ document.getElementById('breed').addEventListener("change", onSelectChange)
             // use breed ID to create url to fetch image X
     // fetch cat images X
         // append images onto html webpage
-function catPicture() {
+function catPicture(value) {
     // match element to html, 'beng' is a placeholder
-    var catID = document.getElementById('Beng').textContent;
-    var searchID = catID.toLowerCase().slice(0, 4); 
-    var catUrl = 'https://api.thecatapi.com/v1/images/search?breed_ids=' + searchID;
+    // var catID = document.getElementById('Beng').textContent;
+    // var searchID = catID.toLowerCase().slice(0, 4); 
+    var catUrl = 'https://api.thecatapi.com/v1/images/search?breed_ids=' + value;
     console.log(catUrl);
     fetch(catUrl)
     .then (function (response) {
@@ -101,10 +101,10 @@ function catPicture() {
       catInfo();
     })
 }
-function catInfo() {
-    var catID = document.getElementById('Beng').textContent;
-    var searchID = catID.toLowerCase().slice(0, 4); 
-    var breedURL = 'https://api.thecatapi.com/v1/breeds/' + searchID;
+function catInfo(value) {
+    // var catID = document.getElementById('Beng').textContent;
+    // var searchID = catID.toLowerCase().slice(0, 4); 
+    var breedURL = 'https://api.thecatapi.com/v1/breeds/' + value;
     console.log(breedURL);
     fetch(breedURL)
     .then (function (response) {
@@ -138,3 +138,49 @@ catPicture();
 // bombay id bomb
 // chartreux id char
 // oriental id orie
+
+// modal for dog button
+document.addEventListener('DOMContentLoaded', () => {
+    // Functions to open and close a modal
+    function openModal($el) {
+      $el.classList.add('is-active');
+    }
+  
+    function closeModal($el) {
+      $el.classList.remove('is-active');
+    }
+  
+    function closeAllModals() {
+      (document.querySelectorAll('.modal') || []).forEach(($modal) => {
+        closeModal($modal);
+      });
+    }
+  
+    // Add a click event on buttons to open a specific modal
+    (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
+      const modal = $trigger.dataset.target;
+      const $target = document.getElementById(modal);
+  
+      $trigger.addEventListener('click', () => {
+        openModal($target);
+      });
+    });
+  
+    // Add a click event on various child elements to close the parent modal
+    (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+      const $target = $close.closest('.modal');
+  
+      $close.addEventListener('click', () => {
+        closeModal($target);
+      });
+    });
+  
+    // Add a keyboard event to close all modals
+    document.addEventListener('keydown', (event) => {
+      const e = event || window.event;
+  
+      if (e.keyCode === 27) { // Escape key
+        closeAllModals();
+      }
+    });
+  });
