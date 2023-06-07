@@ -17,9 +17,9 @@ This is what we attempted to make our webpage look like.
 [Dog API](https://thedogapi.com/)
 
 ## Usage
-The user is prompted with two different dropdowns that list a selection of either cat or dog breeds. When the user clicks on the breed they want to learn more about then a modal pops up on the page with an image and short description about the chosen breed. Try out our application [here](https://zencoh.github.io/soCrazyGroupProject/).
+The user is prompted with two different dropdowns that list a selection of either cat or dog breeds. When the user clicks on the breed they want to learn more about then a modal pops up on the page with an image and short description about the chosen breed. Try out our application [here](https://zencoh.github.io/DogandCatSearchEngine/).
 ![](/assets/images/dog%26catscreenshot.png)
 ![](/assets/images/dog%26catmodal.png)
 
 ## Credits
-Collaborators: [Andrew](https://github.com/AMess33), [Houston](https://github.com/hasherlaws18), [Malayah](https://github.com/malayahdemby)
+Collaborators: [Andrew](https://github.com/AMess33), [Houston](https://github.com/hasherlaws18), [Malayah](https://github.com/malayahdemby), [Cole](https://github.com/zencoh)
